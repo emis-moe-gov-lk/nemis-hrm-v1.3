@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\TransferCategory;
+use App\Models\TeacherTransferCategory;
 
-class TransferCategorySeeder extends Seeder
+class TeacherTransferCategorySeeder extends Seeder
 {
     public function run(): void
     {
@@ -42,8 +42,8 @@ class TransferCategorySeeder extends Seeder
 
             [
                 'office_level_id' => 'OLID004', // ZEO
-                'transfer_category_name' => 'Inter Zone Transfer (WP)',
-                'description' => 'Inter Zone Transfer',
+                'transfer_category_name' => 'Intra Zone - Within Zone Transfer (WP)',
+                'description' => 'Intra Zone - Within Zone Transfer',
                 'active_status' => true
             ],
 
@@ -51,7 +51,7 @@ class TransferCategorySeeder extends Seeder
 
         foreach ($categories as $category) {
 
-            TransferCategory::updateOrCreate(
+            TeacherTransferCategory::updateOrCreate(
 
                 [
                     'transfer_category_name' => $category['transfer_category_name']
